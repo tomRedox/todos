@@ -7,7 +7,10 @@ Package.describe({
 Package.onUse(function(api) {
   api.imply([
     'todos-lib',
-    'practicalmeteor:mocha@2.1.0_5',
+    'ecmascript',
+    'underscore',
+    'check',
+    'mike:mocha-package@0.5.9',
     'practicalmeteor:chai@2.1.0_1',
     'publication-collector',
     'factory',
