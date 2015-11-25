@@ -9,8 +9,10 @@ Template.todosItem.onCreated(function() {
   // }));
 });
 
+
 Template.todosItem.helpers({
   checkedClass() {
+    console.log('checkedClass called')
     return this.todo.checked && 'checked';
   },
   editingClass() {

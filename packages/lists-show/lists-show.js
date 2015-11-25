@@ -72,8 +72,15 @@ Template.listsShow.onCreated(function() {
 });
 
 Template.listsShow.helpers({
+  performantList() {
+    // We explicitly filter out the incompleteCount so the list doesn't change every time
+    // we add a todo or check it off. This is a performance optimization
+    return {list: Lists.findOne(this.list._id, {fields: {incompleteCount: false}})};
+  },
   todos(listId) {
-    return Lists.findOne(listId).todos();
+    console.log('here')
+    // return todos;
+    return Todos.find({listId})
   },
   todoArgs(todo) {
     const instance = Template.instance();

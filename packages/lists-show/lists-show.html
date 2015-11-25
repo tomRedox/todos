@@ -62,9 +62,7 @@
 
     <div class="content-scrollable list-items">
       {{#if todosReady}}
-        {{#with list._id}} {{! Establish new data context with only the '_id'
-                            field. This way, when the 'incompleteCount' field
-                            changes, we don't re-render the list contents }}
+        {{#with list._id}}
           {{#each todo in (todos this)}}
             {{> todosItem (todoArgs todo)}}
           {{else}}
